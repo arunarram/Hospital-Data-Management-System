@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>View Doctor Details</h3>
+    <select class="form-select my-3" #mySelect (change)='getDoctor(mySelect.value)'>
+        <option selected disabled>Select Doctor</option>
+        <option class='option' *ngFor="let name of doctorNames" [value]="name">{{name}}</option>
+    </select>
+
+    <table *ngIf="doctor" class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Specialized Field</th>
+                <th>Number of Patients Visited</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{doctor.name}}</td>
+                <td>{{doctor.specialist}}</td>
+                <td>{{doctor.numberOfPatientsVisited}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

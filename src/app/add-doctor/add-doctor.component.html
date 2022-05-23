@@ -1,0 +1,33 @@
+<div class="container my-3">
+    <h3>Enter Doctor Details</h3>
+    <form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">
+        <div class="mb-3">
+            <label for="name" class="form-label">Doctor Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Doctor Age</label>
+            <input type="number" formControlName="age" class="form-control" id="age" required>
+        </div>
+        <div class="mb-3">
+            <label for="specialist" class="form-label">Specialized In</label>
+                <input type="text" formControlName="specialist" class="form-control" id="specialist" required>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" formControlName="gender" type="radio" id="male" value="Male">
+            <label class="form-check-label" for="male">
+                Male
+            </label>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" formControlName="gender" type="radio" id="female" value="Female">
+            <label class="form-check-label" for="female">
+                Female
+            </label>
+        </div>
+
+        <button [disabled]="formdata.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div *ngIf="doctor">Doctor added Successfully</div>
+    <div *ngIf="error">Doctor is not added</div>
+</div>

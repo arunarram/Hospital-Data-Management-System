@@ -1,0 +1,31 @@
+<div class="container">
+    <h3>View Patient Details</h3>
+    <form class="form-group">
+        <label for="id" class="my-2">Patient Id:</label>
+        <input type="number" [(ngModel)]="id" name="id" class="form-control" required>
+        <button [disabled]="!id"  class="btn btn-success my-2" (click)="getPatient()">Submit</button>
+    </form>
+    <table *ngIf="patient" class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Patient Age</th>
+                <th>Visited Doctor Name</th>
+                <th>Date of Visit</th>
+                <th>Doctor's Prescription</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.visitedDoctor}}</td>
+                <td>{{patient.dateOfVisit| date: 'dd/MM/yyyy' }}</td>
+                <td>{{patient.prescription}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="error">
+        <p class="text-danger">{{error}}</p>
+    </div>
+</div>
