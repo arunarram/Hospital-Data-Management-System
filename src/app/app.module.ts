@@ -10,6 +10,7 @@ import { ShowPatientComponent } from './show-patient/show-patient.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './service/data.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DataService } from './service/data.service';
     AddDoctorComponent,
     AddPatientComponent,
     ShowDoctorComponent,
-    ShowPatientComponent
+    ShowPatientComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
